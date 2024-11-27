@@ -23,7 +23,7 @@ To get started with the Weather Journal App, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/AmanSalman/WeatherJournalApp.git
+    git clone https://github.com/mossi4476/Weather-Journal-App.git
     ```
 2. Navigate to the project directory:
     ```bash
