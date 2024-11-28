@@ -1,42 +1,49 @@
 # Weather Journal App
 
 ## Overview
-The Weather Journal App is a user-friendly web application designed to let you record your feelings alongside current weather data. By entering your zip code, you can retrieve the latest weather conditions from the OpenWeatherMap API and see a snapshot of the temperature, along with your personal notes and the date.
+The Weather Journal App is a simple and intuitive web application that allows users to document their feelings alongside real-time weather data. By entering a zip code, users can access the latest weather conditions from the OpenWeatherMap API, view the current temperature, and add personal notes with the date.
 
 ## Key Features
-- **Weather Data Retrieval**: Fetches real-time weather information based on your zip code using the OpenWeatherMap API.
-- **Personal Notes**: Allows you to enter a brief description of how you’re feeling.
-- **Data Display**: Shows the current temperature, the date, and your personal notes on the screen.
+- **Weather Data Retrieval**: Get real-time weather updates based on your zip code using the OpenWeatherMap API.
+- **Personal Notes**: Input a brief description of your feelings.
+- **Data Display**: View the current temperature, date, and your personal notes on the interface.
 
-## Project Layout
-The project includes the following files:
+## Project Structure
+The project consists of the following files:
 
-- `website/index.html`: The core HTML structure of the web page.
-- `website/style.css`: Stylesheet for customizing the appearance of the web page.
-- `website/app.js`: JavaScript file that handles the client-side functionality.
-- `server.js`: Server-side script built with Express.js for handling requests.
+- `website/index.html`: The main HTML structure of the web application.
+- `website/style.css`: The stylesheet for customizing the web page's appearance.
+- `website/app.js`: The JavaScript file that manages client-side functionality.
+- `server.js`: The server-side script built with Express.js to handle requests.
 - `package.json`: Contains project metadata and dependencies.
 - `README.md`: This documentation file.
 
 ## Getting Started
-To get started with the Weather Journal App, follow these steps:
+To set up the Weather Journal App, follow these steps:
 
 1. Clone the repository:
     ```bash
     git clone https://github.com/mossi4476/Weather-Journal-App.git
     ```
-2. Navigate to the project directory:
+2. Change to the project directory:
     ```bash
     cd WeatherJournalApp
     ```
-3. Install the required dependencies:
+3. Install the necessary dependencies:
     ```bash
     npm install
     ```
 
-## Running the App
-1. Launch the server:
+## Running the Application
+1. Start the server:
     ```bash
     npm run start
     ```
-2. Open your browser and go to `http://localhost:3000` to start using the app.
+2. Open your web browser and navigate to `http://localhost:3000` to begin using the app.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Acknowledgments
+- Thank you to OpenWeatherMap for providing the weather data API.
+- Special thanks to all contributors of this project.

@@ -1,46 +1,36 @@
-// Setup empty JS object to act as endpoint for all routes
-let projectData = {};
+import express from 'express';  // ES module import
+import cors from 'cors';       // ES module import
+import path from 'path';       // ES module import
+import { fileURLToPath } from 'url';
 
-// Require Express to run server and routes
-import express from 'express';
-import cors from 'cors';
-/* Dependencies */
-import bodyParser from 'body-parser';
+// For dynamic ES module imports, use fileURLToPath for __dirname equivalent
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Start up an instance of app
 const app = express();
 
-/* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-
+// Enable CORS
 app.use(cors());
 
-// Initialize the main project folder
-app.use(express.static('website'));
+// Serve static files (HTML, CSS, JS) from 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-// POST route
-app.post('/add', addInfo);
+// API route: Get the project data
+let projectData = {};
 
-function addInfo(req, res) {
-    projectData['temp'] = req.body.temp;
-    projectData['date'] = req.body.date;
-    projectData['content'] = req.body.content;
+// Endpoint to get all data
+app.get('/all', (req, res) => {
     res.send(projectData);
-}
+});
 
-// Initialize all route with a callback function
-app.get('/all', getInfo);
-
-// Callback function to complete GET '/all'
-function getInfo(req, res) {
+// Endpoint to add data
+app.post('/add', express.json(), (req, res) => {
+    projectData = { ...projectData, ...req.body };
     res.send(projectData);
-};
+});
 
-// Set up and Spin up the server
-const port = 3000;
-const server = app.listen(port, () => {
-    console.log(`server is listening on port: ${port}`); // Callback to debug
+// Start the server
+const port = 8000;
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
 });
